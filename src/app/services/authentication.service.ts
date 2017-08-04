@@ -9,7 +9,7 @@ export class AuthenticationService {
   constructor(private http : Http) { }
 
   login(username:string,password:string){
-    return this.http.post('/api/authenticate',JSON.stringify({username:username,password:password}))
+    return this.http.post('https://jsonplaceholder.typicode.com/users',JSON.stringify({username:username,password:password}))
       .map((response: Response)=>{
         //If login successfull if there is a jwt token response
         let user =  response.json();
