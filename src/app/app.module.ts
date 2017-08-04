@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertDirective } from './directives/alert.directive';
-import { AuthenticationService, AlertService } from './services/index'
+import { AuthenticationService, AlertService } from './services/index';
+import { ComponentComponent } from './component/component.component'
 
 const routes: Routes = [
     { path: 'home',component: RegisterComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    AlertDirective
+    AlertDirective,
+    ComponentComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
