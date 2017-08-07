@@ -11,7 +11,7 @@ export class UserService {
   ) { }
 
   getAll(){
-    return this.http.get('/api/user',  this.jwt())
+    return this.http.get('https://jsonplaceholder.typicode.com/users',  this.jwt())
       .map((response : Response) => response.json());
   }
 
@@ -21,8 +21,13 @@ export class UserService {
   }
 
   create(user: User){ 
-    return this.http.post('api/users', user, this.jwt())
-      .map((response: Response)=> response.json());
+    return this.http.post('https://jsonplaceholder.typicode.com/users', user, this.jwt())
+      .map((response: Response)=> {
+          response.json()
+          console.log(response);
+          
+      });
+      
   }
 
   update(user: User){

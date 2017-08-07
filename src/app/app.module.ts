@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }    from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, BaseRequestOptions } from '@angular/http';
+import { fakeBackendProvider } from './helpers/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -41,7 +43,11 @@ const routes: Routes = [
     AuthenticationService,
     AlertService,
     AuthGuard,
-    UserService
+    UserService,
+
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent]
 })
