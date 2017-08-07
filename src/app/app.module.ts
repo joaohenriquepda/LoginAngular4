@@ -13,6 +13,7 @@ import { AuthenticationService, AlertService } from './services/index';
 import { ComponentComponent } from './component/component.component'
 
 const routes: Routes = [
+    { path: 'login',component: LoginComponent },
     { path: 'home',component: RegisterComponent },
     { path: '**', redirectTo: '' }
 ];
