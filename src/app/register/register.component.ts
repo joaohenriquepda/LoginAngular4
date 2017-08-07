@@ -23,14 +23,14 @@ export class RegisterComponent implements OnInit {
 
   register(){
     this.loading = true;
-    this.userService.create(this.model)
-      .subscribe(data => {
+    this.userService.create(this.model).subscribe(data => {
           this.alertService.success('Regsitration Successful', true);
           this.router.navigate(['/login']);
         },
         error=>{
           this.alertService.error(error);
           this.loading = false;
-        });
+        }
+      );
    }
 }

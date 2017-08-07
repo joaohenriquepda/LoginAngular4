@@ -10,11 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertDirective } from './directives/alert.directive';
 import { AuthenticationService, AlertService } from './services/index';
-import { ComponentComponent } from './component/component.component'
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guard/index';
+import { AlertComponent } from './directives/alert.component';
+import { UserService } from "./services/user.service";
 
 const routes: Routes = [
-    { path: 'login',component: LoginComponent },
-    { path: 'home',component: RegisterComponent },
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
     { path: '**', redirectTo: '' }
 ];
 
@@ -24,7 +28,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     AlertDirective,
-    ComponentComponent
+    HomeComponent,
+    AlertComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -34,7 +39,9 @@ const routes: Routes = [
   ],
   providers: [
     AuthenticationService,
-    AlertService
+    AlertService,
+    AuthGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

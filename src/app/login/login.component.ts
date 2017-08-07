@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../services/'
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,8 +26,7 @@ export class LoginComponent implements OnInit {
     //Resert status login
     this.authenticationService.logout();
     //Get return url from  route  parameters of default to '/'
-    //this.returnUrl  = this.route.snapshot.queryParams['returnUrl'] || '/';
-
+    this.returnUrl  = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
 

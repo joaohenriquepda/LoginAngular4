@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component'
-import { ComponentComponent } from './component/component.component'
+
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,5 @@ import { ComponentComponent } from './component/component.component'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  message = {
-    text : "eeee"
-  }
+
 }
